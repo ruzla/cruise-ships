@@ -1,8 +1,0 @@
-
-
-
-
-
-
-
-export.modules = { Ship };
