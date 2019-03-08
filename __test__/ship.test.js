@@ -1,4 +1,5 @@
-const { Ship, Port } = require('../src/ship.js');
+const { Ship } = require('../src/ship.js');
+const { Port } = require('../src/port.js');
 
 describe('Ship', () => {
   it('returns an object', () => {
@@ -25,7 +26,7 @@ describe('Ship', () => {
     const port = new Port('Dover');
     const ship = new Ship(port);
 
-    const calais = new Port('Calias');
+    const calais = new Port('Calais');
     ship.dock(calais);
 
     expect(ship.currentPort).toBe(calais);
