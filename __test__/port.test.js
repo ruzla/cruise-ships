@@ -9,7 +9,6 @@ describe('new port', () => {
   it('port has a name', () => {
     expect(new Port('Dover').port).toEqual('Dover');
   });
-
 });
 
 describe('add ship to port', () => {
