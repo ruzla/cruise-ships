@@ -14,7 +14,9 @@ describe('new port', () => {
 describe('add ship to port', () => {
   it('returns port', () => {
     const port = new Port('Calais');
+
     const ship = {};
+
     port.addShip(ship);
 
     expect(port.ships).toContain(ship);
