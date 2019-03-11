@@ -22,29 +22,47 @@ const dover = new Port('Dover');
 
 const calais = new Port('Calais');
 
-const itinerary = new Itinerary([dover, calais]);
+const hull = new Port('Hull');
+
+const liverpool = new Port('Liverpool');
+
+const itinerary = new Itinerary([dover, calais, hull, liverpool]);
 
 const ship = new Ship(itinerary);
 
-console.log()
+console.log(ship);
 
 ship.setSail();
 
 ship.dock();
 
-console.log(itinerary);
-console.log();
-console.log();
-console.log();
-console.log();
-console.log(ship.currentPort);
-console.log();
-console.log();
-console.log();
-console.log();
-console.log(calais.ships);
-console.log();
-console.log();
-console.log();
-console.log();
-console.log(ship)
+console.log(ship);
+
+ship.setSail();
+
+ship.dock();
+
+console.log(ship);
+
+ship.setSail();
+
+ship.dock();
+
+console.log(ship);
+
+// console.log(itinerary);
+// console.log();
+// console.log();
+// console.log();
+// console.log();
+// console.log(ship.currentPort);
+// console.log();
+// console.log();
+// console.log();
+// console.log();
+// console.log(calais.ships);
+// console.log();
+// console.log();
+// console.log();
+// console.log();
+// console.log(ship)
