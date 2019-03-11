@@ -26,10 +26,25 @@ const itinerary = new Itinerary([dover, calais]);
 
 const ship = new Ship(itinerary);
 
+console.log()
+
 ship.setSail();
 
 ship.dock();
 
 console.log(itinerary);
+console.log();
+console.log();
+console.log();
+console.log();
 console.log(ship.currentPort);
+console.log();
+console.log();
+console.log();
+console.log();
 console.log(calais.ships);
+console.log();
+console.log();
+console.log();
+console.log();
+console.log(ship)

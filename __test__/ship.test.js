@@ -22,31 +22,39 @@ describe('Ship', () => {
   it('can set sail', () => {
     const dover = new Port('Dover');
 
-    const itinerary = new Itinerary([dover]);
+    const calais = new Port('Calais');
+
+    const itinerary = new Itinerary([dover, calais]);
 
     const ship = new Ship(itinerary);
 
     ship.setSail();
 
-    expect(ship.currentPort).toBeFalsy(); 
+    expect(ship.currentPort).toBeFalsy();
+
+    expect(dover.ships).not.toContain(ship);
   });
 
   it('can dock at a different port', () => {
     const dover = new Port('Dover');
 
-    const itinerary = new Itinerary([dover]);
+    const calais = new Port('Calais');
+
+    const itinerary = new Itinerary([dover, calais]);
 
     const ship = new Ship(itinerary);
 
-    const calais = new Port('Calais');
-    ship.dock(calais);
+    ship.setSail();
+
+    ship.dock();
 
     expect(ship.currentPort).toBe(calais);
 
+    expect(calais.ships).toContain(ship);
   });
 
-  it('gets added to port on instantiation', () => {
 
+  it('gets added to port on instantiation', () => {
     const dover = new Port('Dover');
 
     const itinerary = new Itinerary([dover]);
@@ -54,5 +62,5 @@ describe('Ship', () => {
     const ship = new Ship(itinerary);
 
     expect(dover.ships).toContain(ship);
-  });  
+  });
 });
