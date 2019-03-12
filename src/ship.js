@@ -7,14 +7,13 @@ function Ship(itinerary) {
   this.previousPort = null;
 
   this.currentPort.addShip(this);
-
 }
 
 Ship.prototype.setSail = function () {
   this.previousPort = this.currentPort;
-  
+
   this.currentPort = null;
-  
+
   this.previousPort.removeShip(this);
 };
 
