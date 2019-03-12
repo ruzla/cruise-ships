@@ -5,28 +5,38 @@ const { Itinerary } = require('../src/itinerary.js');
 describe('Ship', () => {
   it('returns an object', () => {
     const dover = new Port('Dover');
+
     const itinerary = new Itinerary([dover]);
+
     expect(new Ship(itinerary)).toBeInstanceOf(Object);
+  });
+});
+
+
+describe('with ports and an itinarary', () => {
+  let ship;
+
+  let dover;
+
+  let calais;
+
+  let itinerary;
+  beforeEach(() => {
+    dover = new Port('Dover');
+
+    calais = new Port('Calais');
+
+    itinerary = new Itinerary([dover, calais]);
+
+    ship = new Ship(itinerary);
   });
 
   it('has a starting point', () => {
-    const dover = new Port('Dover');
-
-    const itinerary = new Itinerary([dover]);
-
-    const ship = new Ship(itinerary);
 
     expect(ship.currentPort.port).toBe('Dover');
   });
 
   it('can set sail', () => {
-    const dover = new Port('Dover');
-
-    const calais = new Port('Calais');
-
-    const itinerary = new Itinerary([dover, calais]);
-
-    const ship = new Ship(itinerary);
 
     ship.setSail();
 
@@ -36,13 +46,6 @@ describe('Ship', () => {
   });
 
   it('can dock at a different port', () => {
-    const dover = new Port('Dover');
-
-    const calais = new Port('Calais');
-
-    const itinerary = new Itinerary([dover, calais]);
-
-    const ship = new Ship(itinerary);
 
     ship.setSail();
 
@@ -55,11 +58,6 @@ describe('Ship', () => {
 
 
   it('gets added to port on instantiation', () => {
-    const dover = new Port('Dover');
-
-    const itinerary = new Itinerary([dover]);
-
-    const ship = new Ship(itinerary);
 
     expect(dover.ships).toContain(ship);
   });
