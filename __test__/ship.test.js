@@ -35,7 +35,6 @@ describe('Ship', () => {
     expect(new Ship(itinerary)).toBeInstanceOf(Object);
   });
 
-
   it('has a starting point', () => {
     expect(ship.currentPort).toEqual(dover);
   });

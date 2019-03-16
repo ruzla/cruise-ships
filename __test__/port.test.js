@@ -13,7 +13,6 @@ describe('new port', () => {
 describe('add ship to port', () => {
   it('returns port', () => {
     const port = new Port('Calais');
-
     const ship = jest.fn();
 
     port.addShip(ship);
