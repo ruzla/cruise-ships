@@ -9,7 +9,7 @@ function Ship(itinerary) {
   this.currentPort.addShip(this);
 }
 
-Ship.prototype.setSail = function () {
+Ship.prototype.setSail = function setSail() {
   this.previousPort = this.currentPort;
 
   this.currentPort = null;
@@ -17,7 +17,7 @@ Ship.prototype.setSail = function () {
   this.previousPort.removeShip(this);
 };
 
-Ship.prototype.dock = function (port) {
+Ship.prototype.dock = function dock() {
   const itinerary = this.itinerary;
 
   const previousPortIndex = itinerary.ports.indexOf(this.previousPort);

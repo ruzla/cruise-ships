@@ -7,8 +7,8 @@ Port.prototype.addShip = function addShip(ship) {
   this.ships.push(ship);
 };
 
-Port.prototype.removeShip = function (shipToRemove) {
-  const shipIndex = this.ships.findIndex(shipIndex => shipIndex === shipToRemove);
+Port.prototype.removeShip = function removeShip(shipToRemove) {
+  const shipIndex = this.ships.findIndex(ship => ship === shipToRemove);
   this.ships.splice(shipIndex, 1);
 };
 
