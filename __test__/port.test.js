@@ -1,5 +1,4 @@
 const { Port } = require('../src/port.js');
-const { Ship } = require('../src/ship.js');
 
 describe('new port', () => {
   it('returns an object', () => {

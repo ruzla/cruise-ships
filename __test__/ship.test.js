@@ -1,6 +1,4 @@
 const { Ship } = require('../src/ship.js');
-const { Port } = require('../src/port.js');
-const { Itinerary } = require('../src/itinerary.js');
 
 describe('Ship', () => {
   let ship;
@@ -14,7 +12,6 @@ describe('Ship', () => {
   };
 
   beforeEach(() => {
-
     dover = {
       ...port,
       name: 'Dover',
@@ -27,7 +24,10 @@ describe('Ship', () => {
       ships: [],
     };
 
-    itinerary = new Itinerary([dover, calais]);
+    itinerary = {
+      ports: [dover, calais],
+    };
+
     ship = new Ship(itinerary);
   });
 
