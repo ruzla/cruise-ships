@@ -32,11 +32,7 @@ const ship = new Ship(itinerary);
 
 console.log(ship);
 
-ship.setSail();
-
-ship.dock();
-
-console.log(ship);
+console.log(dover);
 
 ship.setSail();
 
@@ -44,11 +40,23 @@ ship.dock();
 
 console.log(ship);
 
+console.log(calais);
+
 ship.setSail();
 
 ship.dock();
 
 console.log(ship);
+
+console.log(hull);
+
+ship.setSail();
+
+ship.dock();
+
+console.log(ship);
+
+console.log(liverpool);
 
 // console.log(itinerary);
 // console.log();
