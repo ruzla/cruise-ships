@@ -25,7 +25,3 @@
     window.Port = Ship;
   }
 }());
-
-// module.exports = {
-//   Ship,
-// };

@@ -9,7 +9,3 @@
     window.Port = Itinerary;
   }
 }());
-
-// module.exports = {
-//   Itinerary,
-// };
