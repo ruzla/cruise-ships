@@ -50,11 +50,18 @@
     const nextPortIndex = currentPortIndex + 1;
     const nextPortElement = document.querySelector(`[data-port-index='${nextPortIndex}']`);
     const shipElement = document.querySelector('#ship');
+    
+    const javascript_abort = () => { 
+      throw new Error('This is not an error. This is just to abort javascript. The ship has completed it\'s journey!');
+    };
+
     if (!nextPortElement) {
       this.renderMessage('End of the line!');
+      javascript_abort();
     } else {
-      this.renderMessage(`Leaving port ${ship.currentPort.port}`);
+      this.renderMessage(`Now Departing ${ship.currentPort.port}`);
     }
+
     ship.setSail();
     
     const sailInterval = setInterval(() => {
