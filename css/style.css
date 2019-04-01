@@ -66,3 +66,18 @@ body {
     border-top: 3px solid black;
     background-color: white;
 }
+
+#hud {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    text-align: right;
+    padding: 16px;
+    font-family: 'Press Start 2P', cursive;
+    position: absolute;
+    width: 100%;
+    background-color: black;
+    color: white;
+    top: 0;
+
+}

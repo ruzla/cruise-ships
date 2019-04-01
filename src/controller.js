@@ -12,7 +12,8 @@
   
     let backgroundIndex = 0;
   
-    window.setInterval(() => {document.querySelector('#viewport').style.backgroundImage = `url('${backgrounds[backgroundIndex % backgrounds.length]}')`;
+    window.setInterval(() => { 
+      document.querySelector('#viewport').style.backgroundImage = `url('${backgrounds[backgroundIndex % backgrounds.length]}')`;
       backgroundIndex += 1;
     }, 1000);
   };
@@ -20,6 +21,8 @@
   Controller.prototype.renderPorts = function renderPorts(ports) {
     const portsElement = document.querySelector('#ports');
     portsElement.style.width = '0px';
+
+    this.headsUpDisplay();
 
     ports.forEach((port, index) => {
       const newPortElement = document.createElement('div');
@@ -70,6 +73,7 @@
         ship.dock();
         this.renderMessage(`Docked at ${ship.currentPort.port}`);
         clearInterval(sailInterval);
+        this.headsUpDisplay();
       }
       shipElement.style.left = `${shipLeft + 1}px`;
     }, 20);
@@ -85,6 +89,21 @@
     setTimeout(() => {
       viewport.removeChild(messageElement);
     }, 2000);
+  };
+
+  Controller.prototype.headsUpDisplay = function headsUpDisplay() {
+    const ship = this.ship;
+    const currentPortIndex = ship.itinerary.ports.indexOf(ship.currentPort);
+    const nextPortIndex = currentPortIndex + 1;
+    
+    const currentElement = document.querySelector('#current');
+    currentElement.id = 'current';
+    currentElement.innerHTML = `Current Port: ${ship.itinerary.ports[currentPortIndex].port}`;
+  
+    const nextElement = document.querySelector('#next');
+    nextElement.id = 'next';
+    nextElement.innerHTML = `Next Port: ${ship.itinerary.ports[nextPortIndex].port}`;
+
   };
 
 
